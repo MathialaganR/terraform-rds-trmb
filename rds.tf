@@ -1,4 +1,4 @@
-#module bts-terraform-rds
+
 
 resource "aws_db_instance" "main_rds_instance" {
   identifier                          = "${var.global_product}-${var.global_environment}-${var.rds_instance_basename}-rds"
