@@ -1,5 +1,3 @@
-
-
 resource "aws_db_instance" "main_rds_instance" {
   identifier                          = "${var.global_product}-${var.global_environment}-${var.rds_instance_basename}-rds"
   allocated_storage                   = "${var.rds_allocated_storage}"
@@ -30,16 +28,16 @@ resource "aws_db_instance" "main_rds_instance" {
 
   lifecycle {
     ignore_changes  = ["name"]
-    prevent_destroy = false     #lifecycle blocks cannot contain interpolated values. https://github.com/hashicorp/terraform/issues/3116
+    prevent_destroy = false    #lifecycle blocks cannot contain interpolated values. https://github.com/hashicorp/terraform/issues/3116
   }
 
   tags {
-    Name            = "${var.global_product}-${var.global_environment}-${var.rds_instance_basename}-rds"
-    Environment     = "${var.global_environment}"
-    costcentre      = "${var.global_costcentre}"
-    Standard        = "BU=${var.business_unit}:Product=${var.global_product}:ENV=${var.global_environment}:Role=${var.purpose}:Apps=${var.apps}"
-    Product         = "${var.global_product}"
-    Product         = "${var.tag_product}"
+    Name        = "${var.global_product}-${var.global_environment}-${var.rds_instance_basename}-rds"
+    Environment = "${var.global_environment}"
+    costcentre  = "${var.global_costcentre}"
+    Standard    = "BU=${var.business_unit}:Product=${var.global_product}:ENV=${var.global_environment}:Role=${var.purpose}:Apps=${var.apps}"
+    Product     = "${var.global_product}"
+    Product     = "${var.tag_product}"
   }
 }
 

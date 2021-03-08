@@ -105,8 +105,7 @@ variable "trusted_sg" {
 }
 
 variable "access_cidr_blocks" {
-
-  default     = ""
+  default = ""
 }
 
 # RDS Subnet Group Variables
@@ -171,8 +170,6 @@ variable "rds_route53" {
   default     = "NA"
 }
 
-
-
 variable "tag_product" {}
 
 variable "tag_cpmbackup" {
@@ -187,5 +184,5 @@ variable "rds_deletion_protection" {
 
 variable "rds_iam_database_auth" {
   description = "Specifies whether mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled."
-  default = "false"
+  default     = "false"
 }
